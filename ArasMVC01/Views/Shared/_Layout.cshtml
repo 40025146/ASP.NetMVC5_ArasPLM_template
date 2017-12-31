@@ -24,6 +24,18 @@
                     <li>@Html.ActionLink("首頁", "Index", "Home")</li>
                     <li>@Html.ActionLink("關於", "About", "Home")</li>
                     <li>@Html.ActionLink("連絡方式", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("WorkOrder", "Index", "WORK_ORDER")</li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (Session["user_name"] == null)
+                    {
+                        <li>@Html.ActionLink("登入", "Index", "Login")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink(Session["user_name"].ToString(), "Logout", "Login")</li>
+                        <li>@Html.ActionLink("登出", "Logout", "Login")</li>
+                    }
                 </ul>
             </div>
         </div>
